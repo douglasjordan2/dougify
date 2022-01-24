@@ -3,7 +3,7 @@ Boilerplate maker for custom Shopify theme development
 
 ## Getting Started
 ```
-npm install --global dougify
+npm install --global dougify (available 1/25 after ~11am CST)
 ```
 
 ### Usage
