@@ -13,5 +13,6 @@ module.exports = {
     idleTimerJS: require('./__IdleTimer.js'),
     themeLiquid: require('./__layout.themeliquid.js'),
     scriptBundle: require('./__snippets.script-bundle.js'),
-    styleBundle: require('./__snippets.style-bundle.js')
+    styleBundle: require('./__snippets.style-bundle.js'),
+    initialIndexJS: require('./__initialIndexJS.js')
 }

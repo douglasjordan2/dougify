@@ -21,12 +21,13 @@ const {
     idleTimerJS,
     themeLiquid,
     scriptBundle,
-    styleBundle
+    styleBundle,
+    initialIndexJS
 } = require('../data')
 
 const _modules = [ 
     new BuildFolders(directories),
-    new BuildFiles(layout, customers, templates),
+    new BuildFiles(layout, customers, templates, initialIndexJS),
     new BuildConfigFiles(webpackConfig, postCSSConfig, gitIgnore, configYML, packageJSON),
     new BuildJSFiles(componentConstructorJS, mutationObserverJS, idleTimerJS),
     new BuildLiquidFiles(themeLiquid, scriptBundle, styleBundle),
