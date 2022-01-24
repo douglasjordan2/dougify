@@ -1,0 +1,15 @@
+{
+    "name": "dougify",
+    "version": "1.0.0",
+    "description": "theme development boilerplate creator",
+    "bin": {
+        "dougify": "./bin/index.js"
+    },
+    "author": "Douglas Jordan - douglas@douglasjordan.dev",
+    "license": "ISC",
+    "dependencies": {
+        "cross-var": "^1.1.0",
+        "flat": "^5.0.2",
+        "fs": "0.0.1-security"
+    }
+}
