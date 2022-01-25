@@ -4,7 +4,9 @@ const BuildFiles = require('../lib/BuildFiles')
 const BuildConfigFiles = require('../lib/BuildConfigFiles')
 const BuildJSFiles = require('../lib/BuildJSFiles')
 const BuildLiquidFiles = require('../lib/BuildLiquidFiles')
+const BuildHelpers = require('../lib/BuildHelpers')
 const Prompt = require('../lib/Prompt')
+
 
 const {
     directories,
@@ -14,7 +16,6 @@ const {
     webpackConfig,
     postCSSConfig,
     gitIgnore,
-    configYML,
     packageJSON,
     componentConstructorJS,
     mutationObserverJS,
@@ -28,9 +29,10 @@ const {
 const _modules = [ 
     new BuildFolders(directories),
     new BuildFiles(layout, customers, templates, initialIndexJS),
-    new BuildConfigFiles(webpackConfig, postCSSConfig, gitIgnore, configYML, packageJSON),
+    new BuildConfigFiles(webpackConfig, postCSSConfig, gitIgnore, packageJSON),
     new BuildJSFiles(componentConstructorJS, mutationObserverJS, idleTimerJS),
     new BuildLiquidFiles(themeLiquid, scriptBundle, styleBundle),
+    new BuildHelpers(),
     new Prompt()
 ]
     
