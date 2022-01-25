@@ -1,4 +1,6 @@
-module.exports = `// Webpack Config
+module.exports = {
+file: './webpack.config.js',
+content: `// Webpack Config
 const glob = require('glob');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -108,4 +110,4 @@ if (mode === 'development') {
             }
         })
     )
-}`
+}`}

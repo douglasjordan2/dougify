@@ -1,4 +1,6 @@
-module.exports = `// Mutation Observer
+module.exports = {
+file: './src/js/helpers/MutationObserver.js',
+content: `// Mutation Observer
 class MutationObserver {
     constructor(observeElem, cb, disconnect, options) {
         this.observeElem = observeElem
@@ -70,4 +72,4 @@ export default MutationObserver
     new MutationObserver(this.elem, () => {
         this.value = parseInt(this.updateElem.innerHTML)
     })
-!!! */`
+!!! */`}

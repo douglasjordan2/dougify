@@ -1,4 +1,6 @@
-module.exports = `{%- comment -%}DO NOT DELETE{%- endcomment -%}
+module.exports = {
+file: './src/liquid/snippets/script-bundle.liquid',
+content: `{%- comment -%}DO NOT DELETE{%- endcomment -%}
 
 {% capture layout_bundle_js %}bundle.{{- layout -}}.js{% endcapture %}
 <script src="{{ layout_bundle_js | asset_url }}" defer></script>
@@ -10,4 +12,4 @@ module.exports = `{%- comment -%}DO NOT DELETE{%- endcomment -%}
   {% unless checkout %}
     <script src="{{ 'bundle.apps.js' | asset_url }}" defer></script>
   {% endunless %}
-{% endif %}`
+{% endif %}`}

@@ -1,4 +1,6 @@
-module.exports = `{%- comment -%}DO NOT DELETE{%- endcomment -%}
+module.exports = {
+file: './src/liquid/snippets/style-bundle.liquid',
+content:`{%- comment -%}DO NOT DELETE{%- endcomment -%}
 
 {% capture layout_bundle_styles %}bundle.{{- layout -}}.css{% endcapture %}
 {{ layout_bundle_styles | asset_url | stylesheet_tag }}
@@ -10,4 +12,4 @@ module.exports = `{%- comment -%}DO NOT DELETE{%- endcomment -%}
   {% unless checkout %}
     {{ 'bundle.apps.css' | asset_url | stylesheet_tag }}
   {% endunless %}
-{% endif %}`
+{% endif %}`}

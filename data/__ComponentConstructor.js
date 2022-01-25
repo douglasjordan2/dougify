@@ -1,4 +1,6 @@
-module.exports = `// Component Constructor
+module.exports = {
+file: './src/js/bundles/ComponentConstructor.js',
+content: `// Component Constructor
 function ComponentConstructor(components) {
     Object.entries(components).forEach(([selector, Component]) => {
         const dataSelect = 'data-' + selector
@@ -20,4 +22,4 @@ export default ComponentConstructor
 !!! but not on the homepage, then you would import your component
 !!! in templates/product.js and templates/collection.js but not
 !!! templates/index.js
-!!! */`
+!!! */`}

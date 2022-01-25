@@ -1,4 +1,6 @@
-module.exports = `// Idle Timer
+module.exports = {
+file: './src/js/helpers/IdleTimer.js',
+content: `// Idle Timer
 class IdleTimer {
     constructor(callback, interval) {
         this.idleTimer = null
@@ -36,4 +38,4 @@ export default IdleTimer
         })
     })
 
-!!! */`
+!!! */`}

@@ -1,12 +1,8 @@
 #!/usr/bin/env node
 const BuildFolders = require('../lib/BuildFolders')
 const BuildFiles = require('../lib/BuildFiles')
-const BuildConfigFiles = require('../lib/BuildConfigFiles')
-const BuildJSFiles = require('../lib/BuildJSFiles')
-const BuildLiquidFiles = require('../lib/BuildLiquidFiles')
-const BuildHelpers = require('../lib/BuildHelpers')
+const WriteFiles = require('../lib/WriteFiles')
 const Prompt = require('../lib/Prompt')
-
 
 const {
     directories,
@@ -23,16 +19,34 @@ const {
     themeLiquid,
     scriptBundle,
     styleBundle,
-    initialIndexJS
+    initialIndexJS,
+    helpersSCSS
 } = require('../data')
+
+const configFiles = [
+    webpackConfig, postCSSConfig, gitIgnore, packageJSON
+]
+
+const jsFiles = [
+    componentConstructorJS, mutationObserverJS, idleTimerJS
+]
+
+const liquidFiles = [
+    themeLiquid, scriptBundle, styleBundle
+]
+
+const scssHelpers = [
+    helpersSCSS
+]
+
+const filesToWrite = [
+    ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
+]
 
 const _modules = [ 
     new BuildFolders(directories),
     new BuildFiles(layout, customers, templates, initialIndexJS),
-    new BuildConfigFiles(webpackConfig, postCSSConfig, gitIgnore, packageJSON),
-    new BuildJSFiles(componentConstructorJS, mutationObserverJS, idleTimerJS),
-    new BuildLiquidFiles(themeLiquid, scriptBundle, styleBundle),
-    new BuildHelpers(),
+    new WriteFiles(filesToWrite),
     new Prompt()
 ]
     

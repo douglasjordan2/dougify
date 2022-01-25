@@ -1,4 +1,6 @@
-module.exports = `{
+module.exports = {
+file: './package.json',
+content: `{
     "name": "themekit-boilerplate",
     "version": "1.0.0",
     "description": "Boilerplate to help build Shopify themes from scratch.",
@@ -13,4 +15,4 @@ module.exports = `{
     "license": "MIT",
     "devDependencies": {},
     "dependencies": {}
-}`
+}`}

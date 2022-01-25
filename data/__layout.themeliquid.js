@@ -1,4 +1,6 @@
-module.exports = `<!doctype html>
+module.exports = {
+file: './src/liquid/layout/theme.liquid',
+content: `<!doctype html>
 <html lang="{{ shop.locale }}">
 <head>
   <title>{{ page_title }}</title>
@@ -21,4 +23,4 @@ module.exports = `<!doctype html>
   </main>
 
 </body>
-</html>`
+</html>`}
