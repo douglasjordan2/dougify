@@ -5,51 +5,54 @@ const WriteFiles = require('../lib/WriteFiles')
 const Prompt = require('../lib/Prompt')
 
 const {
-    directories,
-    layout,
-    customers,
-    templates,
-    webpackConfig,
-    postCSSConfig,
-    gitIgnore,
-    packageJSON,
-    componentConstructorJS,
-    mutationObserverJS,
-    idleTimerJS,
-    themeLiquid,
-    scriptBundle,
-    styleBundle,
-    initialIndexJS,
-    helpersSCSS
+  directories,
+  layout,
+  customers,
+  templates,
+  webpackConfig,
+  postCSSConfig,
+  gitIgnore,
+  packageJSON,
+  componentConstructorJS,
+  mutationObserverJS,
+  idleTimerJS,
+  themeLiquid,
+  exampleSection,
+  scriptBundle,
+  styleBundle,
+  settings_data,
+  settings_schema,
+  initialIndexJS,
+  helpersSCSS,
 } = require('../data')
 
 const configFiles = [
-    webpackConfig, postCSSConfig, gitIgnore, packageJSON
+  webpackConfig, postCSSConfig, gitIgnore, packageJSON
 ]
 
 const jsFiles = [
-    componentConstructorJS, mutationObserverJS, idleTimerJS
+  componentConstructorJS, mutationObserverJS, idleTimerJS
 ]
 
 const liquidFiles = [
-    themeLiquid, scriptBundle, styleBundle
+  themeLiquid, exampleSection, scriptBundle, styleBundle, settings_data, settings_schema
 ]
 
 const scssHelpers = [
-    helpersSCSS
+  helpersSCSS
 ]
 
 const filesToWrite = [
-    ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
+  ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
 ]
 
 const _modules = [ 
-    new BuildFolders(directories),
-    new BuildFiles(layout, customers, templates, initialIndexJS),
-    new WriteFiles(filesToWrite),
-    new Prompt()
+  new BuildFolders(directories),
+  new BuildFiles(layout, customers, templates, initialIndexJS),
+  new WriteFiles(filesToWrite),
+  new Prompt()
 ]
     
 _modules.forEach(Module => {
-    Module.init()
+  Module.init()
 })
