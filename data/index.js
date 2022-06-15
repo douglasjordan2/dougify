@@ -6,7 +6,6 @@ module.exports = {
   postCSSConfig: require('./__postCSSConfig.js'),
   webpackConfig: require('./__webpackConfig.js'),
   gitIgnore: require('./__gitIgnore.js'),
-  configYML: require('./__configYML.js'),
   packageJSON: require('./__packageJSON.js'),
   componentConstructorJS: require('./__ComponentConstructor.js'),
   mutationObserverJS: require('./__MutationObserver.js'),

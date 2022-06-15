@@ -7,8 +7,8 @@ import AddToCart from '../../components/AddToCart'
 import ComponentConstructor from '../ComponentConstructor'
 
 const components = {
-    'side-cart': SideCart,
-    'add-to-cart': AddToCart
+  'side-cart': SideCart,
+  'add-to-cart': AddToCart
 }
 
 ComponentConstructor(components)

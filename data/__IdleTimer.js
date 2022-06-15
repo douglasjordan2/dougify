@@ -2,15 +2,15 @@ module.exports = {
 file: './src/js/helpers/IdleTimer.js',
 content: `// Idle Timer
 class IdleTimer {
-    constructor(callback, interval) {
-        this.idleTimer = null
-        this.timer(callback, interval)
-    }
+  constructor(callback, interval) {
+    this.idleTimer = null
+    this.timer(callback, interval)
+  }
 
-    timer(callback, interval=500) {
-        clearTimeout(this.idleTimer)
-        this.idleTimer = setTimeout(callback, interval)
-    }
+  timer(callback, interval=500) {
+    clearTimeout(this.idleTimer)
+    this.idleTimer = setTimeout(callback, interval)
+  }
 }
 
 export default IdleTimer
@@ -29,13 +29,13 @@ export default IdleTimer
 !!! is allowed to complete. If the same action happens before 
 !!! the interval completes, then the interval will be cleared.
 
-    // Example:
-    new IdleTimer(() => {
-        await axios.post('/cart/update.js', {
-            updates: {
-                [id]: qty
-            }
-        })
+  // Example:
+  new IdleTimer(() => {
+    await axios.post('/cart/update.js', {
+      updates: {
+        [id]: qty
+      }
     })
+  })
 
 !!! */`}

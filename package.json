@@ -1,6 +1,6 @@
 {
     "name": "dougify",
-    "version": "0.0.2",
+    "version": "0.2.0",
     "description": "theme development boilerplate creator",
     "bin": {
         "dougify": "./bin/index.js"

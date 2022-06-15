@@ -1,6 +1,6 @@
 module.exports = {
-    path: '/layout/',
-    files: [
-        'theme'
-    ]
+  path: '/layout/',
+  files: [
+    'theme'
+  ]
 }

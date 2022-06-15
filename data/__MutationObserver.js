@@ -2,43 +2,43 @@ module.exports = {
 file: './src/js/helpers/MutationObserver.js',
 content: `// Mutation Observer
 class MutationObserver {
-    constructor(observeElem, cb, disconnect, options) {
-        this.observeElem = observeElem
-        this.cb = cb
-        this.disconnect = disconnect || false
-        this.options = options || {
-            subtree: true,
-            childList: true
-        }
-
-        this.MutationObserver = window.MutationObserver || window.WebKitMutationObserver
-        this.init()
+  constructor(observeElem, cb, disconnect, options) {
+    this.observeElem = observeElem
+    this.cb = cb
+    this.disconnect = disconnect || false
+    this.options = options || {
+      subtree: true,
+      childList: true
     }
 
-    init() {
-        this.observer = new this.MutationObserver(() => {
-            this.cb()
+    this.MutationObserver = window.MutationObserver || window.WebKitMutationObserver
+    this.init()
+  }
 
-            if(this.disconnect) {
-                this.stop()
-            }
-        })
+  init() {
+    this.observer = new this.MutationObserver(() => {
+      this.cb()
 
-        this.observe()
-    }
-
-    observe() {
-        this.observer.observe(this.observeElem, this.options)
-    }
-
-    stop() {
-        this.observer.disconnect()
-    }
-
-    reload() {
+      if(this.disconnect) {
         this.stop()
-        this.observe()
-    }
+      }
+    })
+
+    this.observe()
+  }
+
+  observe() {
+    this.observer.observe(this.observeElem, this.options)
+  }
+
+  stop() {
+    this.observer.disconnect()
+  }
+
+  reload() {
+    this.stop()
+    this.observe()
+  }
 }
 
 export default MutationObserver
@@ -61,15 +61,15 @@ export default MutationObserver
 !!! repeatedly (for example), then use these methods to make 
 !!! it so the request or function only runs when it needs to.
 
-    // Example:
-      - item is added to cart, but this item is already in the
-        cart. because of this, the item's quantity increments.
-      - the component responsible for changing the quantity of 
-        cart items now needs to know the new quantity
-      - the mutation observer watches for changes to the element
-        and updates the state value when it changes
+  // Example:
+    - item is added to cart, but this item is already in the
+      cart. because of this, the item's quantity increments.
+    - the component responsible for changing the quantity of 
+      cart items now needs to know the new quantity
+    - the mutation observer watches for changes to the element
+      and updates the state value when it changes
 
-    new MutationObserver(this.elem, () => {
-        this.value = parseInt(this.updateElem.innerHTML)
-    })
+  new MutationObserver(this.elem, () => {
+    this.value = parseInt(this.updateElem.innerHTML)
+  })
 !!! */`}

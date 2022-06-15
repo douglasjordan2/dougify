@@ -1,14 +1,11 @@
 module.exports = {        
+  dist: {
+    templates: {}
+  },
   src: {
     assets: {
-      favicon: {},
       fonts: {},
       images: {},
-      svg: {},
-      vendor: {
-        css: {},
-        js: {}
-      }
     },
     js: {
       bundles: {

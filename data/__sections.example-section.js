@@ -1,6 +1,6 @@
 module.exports = {
 file: './src/liquid/sections/example-section.liquid',
-content: `{% comment %} EXAMPLE SECTION FILE {% endcomment %}
+content: `<!-- sections/example-section.liquid -->
 <section>
   {{ section.settings.title }}
 </section>

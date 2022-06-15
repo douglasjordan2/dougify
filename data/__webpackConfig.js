@@ -45,7 +45,8 @@ module.exports = {
         },
         {
           from: 'src/liquid/templates/**/*.liquid',
-          to: 'templates/[name][ext]'
+          to: 'templates/[name][ext]',
+          noErrorOnMissing: true
         },
         {      
           from: 'src/liquid/snippets/**/*.liquid',
