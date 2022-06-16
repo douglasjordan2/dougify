@@ -10,7 +10,8 @@ content: `{
     "dev": "NODE_ENV=development run-p -sr webpack:watch shopify:serve",
     "build": "NODE_ENV=development webpack",
     "webpack:watch": "webpack --watch",
-    "shopify:serve": "cd dist; shopify theme serve"
+    "shopify:serve": "cd dist; shopify theme serve",
+    "shopify:pull": "cd dist; shopify theme pull"
   },
   "keywords": [],
   "author": "DJ",
