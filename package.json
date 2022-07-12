@@ -3,7 +3,7 @@
     "version": "0.2.0",
     "description": "theme development boilerplate creator",
     "bin": {
-        "dougify": "./bin/index.js"
+        "trellis-starter": "./bin/index.js"
     },
     "author": "Douglas Jordan - douglas@douglasjordan.dev",
     "license": "ISC",
