@@ -1,8 +1,9 @@
 #!/usr/bin/env node
+const Prompt = require('../lib/Prompt')
 const BuildFolders = require('../lib/BuildFolders')
 const BuildFiles = require('../lib/BuildFiles')
 const WriteFiles = require('../lib/WriteFiles')
-const Prompt = require('../lib/Prompt')
+const BuildPackageJSON = require('../lib/BuildPackageJSON')
 
 const {
   directories,
@@ -27,7 +28,7 @@ const {
 } = require('../data')
 
 const configFiles = [
-  webpackConfig, postCSSConfig, gitIgnore, packageJSON
+  webpackConfig, postCSSConfig, gitIgnore
 ]
 
 const jsFiles = [
@@ -46,11 +47,17 @@ const filesToWrite = [
   ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
 ]
 
+const prompt = new Prompt()
+console.log(prompt)
+const store = prompt.init()
+
+console.log('store', store)
+
 const _modules = [ 
   new BuildFolders(directories),
   new BuildFiles(layout, customers, templates, initialIndexJS),
   new WriteFiles(filesToWrite),
-  new Prompt()
+  new BuildPackageJSON(packageJSON, store)
 ]
     
 _modules.forEach(Module => {
