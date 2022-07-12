@@ -24,10 +24,11 @@ const {
   settings_schema,
   initialIndexJS,
   helpersSCSS,
+  tailwindConfig
 } = require('../data')
 
 const configFiles = [
-  webpackConfig, postCSSConfig, gitIgnore, packageJSON
+  webpackConfig, postCSSConfig, gitIgnore, packageJSON, tailwindConfig
 ]
 
 const jsFiles = [
