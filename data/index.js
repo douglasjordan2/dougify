@@ -19,6 +19,5 @@ module.exports = {
   initialIndexJS: require('./__initialIndexJS.js'),
   helpersSCSS: require('./__helpersSCSS.js'),
   tailwindConfig: require('./__tailwindConfig.js'),
-  enDefault: require('./__en.default.js'),
-  themeCheckYML: require('./__themeCheckYML')
+  enDefault: require('./__en.default.js')
 }
