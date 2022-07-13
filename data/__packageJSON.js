@@ -7,9 +7,8 @@ content: `{
   "main": "webpack.config.js",
   "scripts": {
     "init": "npm run build; npm run dev;",
-    "dev": "NODE_ENV=development run-p -sr webpack:watch tailwind:watch shopify:serve",
+    "dev": "NODE_ENV=development run-p -sr webpack:watch shopify:serve",
     "build": "NODE_ENV=development webpack",
-    "tailwind:watch": "npx tailwindcss -i ./src/styles/layout/theme.scss -o ./dist/assets/bundle.theme.css.liquid --watch",
     "webpack:watch": "webpack --watch",
     "shopify:serve": "cd dist; shopify theme serve",
     "shopify:pull": "cd dist; shopify theme pull"
