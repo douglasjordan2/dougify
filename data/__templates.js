@@ -13,6 +13,7 @@ module.exports = {
     'page.contact',
     'page',
     'page.contact',
+    'password',
     'product',
     'search'
   ]

@@ -56,6 +56,10 @@ module.exports = {
           from: 'src/liquid/config/**/*',
           to: 'config/[name][ext]'
         },
+        {      
+          from: 'src/liquid/locales/*.json',
+          to: 'locales/[name][ext]'
+        },
         {
           from: 'src/assets/images/*',
           to: 'assets/[name][ext]',

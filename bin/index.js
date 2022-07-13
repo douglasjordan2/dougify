@@ -24,11 +24,13 @@ const {
   settings_schema,
   initialIndexJS,
   helpersSCSS,
-  tailwindConfig
+  tailwindConfig,
+  enDefault,
+  themeCheckYML
 } = require('../data')
 
 const configFiles = [
-  webpackConfig, postCSSConfig, gitIgnore, packageJSON, tailwindConfig
+  webpackConfig, postCSSConfig, gitIgnore, packageJSON, tailwindConfig, themeCheckYML
 ]
 
 const jsFiles = [
@@ -36,7 +38,7 @@ const jsFiles = [
 ]
 
 const liquidFiles = [
-  themeLiquid, exampleSection, scriptBundle, styleBundle, settings_data, settings_schema
+  themeLiquid, exampleSection, scriptBundle, styleBundle, settings_data, settings_schema, enDefault
 ]
 
 const scssHelpers = [
@@ -49,7 +51,7 @@ const filesToWrite = [
 
 const _modules = [ 
   new BuildFolders(directories),
-  new BuildFiles(layout, customers, templates, initialIndexJS),
+  new BuildFiles(layout, templates, customers, initialIndexJS),
   new WriteFiles(filesToWrite),
   new Prompt()
 ]

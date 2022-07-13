@@ -1,6 +1,8 @@
 module.exports = {        
   dist: {
-    templates: {}
+    templates: {
+      customers: {}
+    },
   },
   src: {
     assets: {
@@ -27,9 +29,9 @@ module.exports = {
       snippets: {
         icons: {}
       },
+      locales: {},
       config: {}
     },
-    locales: {},
     styles: {
       helpers: {},
       layout: {},
