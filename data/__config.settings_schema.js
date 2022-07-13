@@ -1,3 +1,4 @@
 module.exports = {
-file: './src/liquid/config/settings_schema.json',
-content: `[]`}
+  file: './src/liquid/config/settings_schema.json',
+  content: `[]`
+}

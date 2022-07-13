@@ -48,11 +48,18 @@ const filesToWrite = [
   ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
 ]
 
+const prompt = require('prompt-sync')({sigint:true})
+
+let store = prompt('Shop handle or URL: ')
+if(store.includes('.myshopify')) {
+  store = store.split('.myshopify')[0]
+}
+
 const _modules = [ 
+  new Prompt(store),
   new BuildFolders(directories),
   new BuildFiles(layout, templates, customers, initialIndexJS),
-  new WriteFiles(filesToWrite),
-  new Prompt()
+  new WriteFiles(filesToWrite, store)
 ]
     
 _modules.forEach(Module => {
