@@ -21,4 +21,4 @@ This project is set up to use NPM. You can change this by changing the commands 
 3. Run the `dougify` command, enter shop url ('.myshopify.com' is optional). Boilerplate will be built and dependancies will be installed. 
 4. When setup is complete, open the project in your IDE and run `init`.
 
-**_ _Note:_ _** _ _If you start a new projact and you're prompted with a message regarding local files that don't exist in the remote version of the development theme, choose the option to keep the local version and restore it remotely. 
+***Note:*** *If you start a new projact and you're prompted with a message regarding local files that don't exist in the remote version of the development theme, choose the option to keep the local version and restore it remotely.* 
