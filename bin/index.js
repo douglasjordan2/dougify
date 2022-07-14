@@ -2,7 +2,7 @@
 const BuildFolders = require('../lib/BuildFolders')
 const BuildFiles = require('../lib/BuildFiles')
 const WriteFiles = require('../lib/WriteFiles')
-const Prompt = require('../lib/Prompt')
+const InstallPackages = require('../lib/InstallPackages')
 
 const {
   directories,
@@ -24,10 +24,12 @@ const {
   settings_schema,
   initialIndexJS,
   helpersSCSS,
+  tailwindConfig,
+  enDefault
 } = require('../data')
 
 const configFiles = [
-  webpackConfig, postCSSConfig, gitIgnore, packageJSON
+  webpackConfig, postCSSConfig, gitIgnore, packageJSON, tailwindConfig
 ]
 
 const jsFiles = [
@@ -35,7 +37,7 @@ const jsFiles = [
 ]
 
 const liquidFiles = [
-  themeLiquid, exampleSection, scriptBundle, styleBundle, settings_data, settings_schema
+  themeLiquid, exampleSection, scriptBundle, styleBundle, settings_data, settings_schema, enDefault
 ]
 
 const scssHelpers = [
@@ -46,11 +48,18 @@ const filesToWrite = [
   ...configFiles, ...jsFiles, ...liquidFiles, ...scssHelpers
 ]
 
+const prompt = require('prompt-sync')({sigint:true})
+
+let store = prompt('Shop handle or URL: ')
+if(store.includes('.myshopify')) {
+  store = store.split('.myshopify')[0]
+}
+
 const _modules = [ 
+  new InstallPackages(store),
   new BuildFolders(directories),
-  new BuildFiles(layout, customers, templates, initialIndexJS),
-  new WriteFiles(filesToWrite),
-  new Prompt()
+  new BuildFiles(layout, templates, customers, initialIndexJS),
+  new WriteFiles(filesToWrite, store)
 ]
     
 _modules.forEach(Module => {

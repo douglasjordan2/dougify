@@ -17,5 +17,7 @@ module.exports = {
   settings_data: require('./__config.settings_data.js'),
   settings_schema: require('./__config.settings_schema.js'),
   initialIndexJS: require('./__initialIndexJS.js'),
-  helpersSCSS: require('./__helpersSCSS.js')
+  helpersSCSS: require('./__helpersSCSS.js'),
+  tailwindConfig: require('./__tailwindConfig.js'),
+  enDefault: require('./__en.default.js')
 }

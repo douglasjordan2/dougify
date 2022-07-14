@@ -17,7 +17,8 @@ content: `<!-- sections/example-section.liquid -->
       { 
         "type": "text",
         "id": "title",
-        "label": "Title"
+        "label": "Title",
+        "default": "Hello World!"
       }
     ]
   }

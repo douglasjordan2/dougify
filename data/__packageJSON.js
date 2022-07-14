@@ -1,20 +1,22 @@
 module.exports = {
 file: './package.json',
 content: `{
-  "name": "dougify",
-  "version": "0.2.0",
-  "description": "Webpack system for Shopify theme development",
+  "name": "{store}",
+  "version": "0.0.1",
+  "description": "Theme for {store} by Trellis",
   "main": "webpack.config.js",
   "scripts": {
     "init": "npm run build; npm run dev;",
-    "dev": "NODE_ENV=development run-p -sr webpack:watch shopify:serve",
+    "dev": "npm run shopify:login; NODE_ENV=development run-p -s webpack:watch shopify:check shopify:serve",
     "build": "NODE_ENV=development webpack",
     "webpack:watch": "webpack --watch",
-    "shopify:serve": "cd dist; shopify theme serve",
-    "shopify:pull": "cd dist; shopify theme pull"
+    "shopify:serve": "cd dist; shopify theme serve --theme-editor-sync",
+    "shopify:login": "shopify login --store {store}.myshopify.com",
+    "shopify:pull": "cd dist; shopify theme pull",
+    "shopify:check": "cd dist; shopify theme check --auto-correct"
   },
   "keywords": [],
-  "author": "DJ",
+  "author": "Trellis",
   "license": "MIT",
   "devDependencies": {},
   "dependencies": {}
