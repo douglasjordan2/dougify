@@ -15,7 +15,7 @@ npm install --global dougify
 ```
 
 ### Usage
-This project is set up to use NPM. You can change this by changing the commands in `data/__packageJSON.js` and `lib/Prompt.js`. to use your package manager.
+This project is set up to use NPM. You can change this by changing the commands in `data/__packageJSON.js` and `lib/InstallPackages.js`. to use your package manager.
 
 1. This project uses the Shopify CLI: (https://shopify.dev/themes/tools/cli) 
 2. `cd` into your project root

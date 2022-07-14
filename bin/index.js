@@ -2,7 +2,7 @@
 const BuildFolders = require('../lib/BuildFolders')
 const BuildFiles = require('../lib/BuildFiles')
 const WriteFiles = require('../lib/WriteFiles')
-const Prompt = require('../lib/Prompt')
+const InstallPackages = require('../lib/InstallPackages')
 
 const {
   directories,
@@ -56,7 +56,7 @@ if(store.includes('.myshopify')) {
 }
 
 const _modules = [ 
-  new Prompt(store),
+  new InstallPackages(store),
   new BuildFolders(directories),
   new BuildFiles(layout, templates, customers, initialIndexJS),
   new WriteFiles(filesToWrite, store)
